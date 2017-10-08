@@ -1,0 +1,70 @@
+header{
+    height: 35vh;
+    background-color: #414141;
+}
+
+.logo{
+    font-family: Arial;
+    color: #f55263;
+    font-size: 120%;
+    margin: 0px 0 0 7vw;
+    padding-top: 3vh;
+    padding-bottom: 3.5vh;
+}
+
+h3, h5{
+    font-family: Arial;
+    color: white;
+    margin-left: 7vw;
+    float: left;
+}
+
+input{
+    width: 83vw;
+    height: 5vh;
+    margin-left: 7vw;
+    background-color: black;
+    border-bottom-color: #f55263;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-family: Arial;
+    color: white;
+    font-size: 110%;
+    padding-left: 3vw;
+}
+
+input:focus{
+    outline: none;
+}
+
+.searchDiv{
+    display: flex;
+    height: 10vh;
+}
+
+button{
+    border-radius: 0.5vh;
+    background-color: #f55263;
+    border: 0;
+    float: left;
+    margin-top: 3vh;
+    margin-left: 2vw;
+}
+
+.textButton{
+    margin: 1vh auto;
+    float: none;
+}
+
+.searchButton{
+    width: 20vw;
+    float: right;
+    margin-top: 2vh;
+    margin-right: 7vw;
+}
+
+.textSearchButton{
+    margin: 2vh auto;
+    float: none;
+}
