@@ -1,15 +1,14 @@
 header{
-    height: 35vh;
+    height: 32vh;
     background-color: #414141;
 }
 
 .logo{
+    display: inline;
     font-family: Arial;
     color: #f55263;
     font-size: 120%;
-    margin: 0px 0 0 7vw;
-    padding-top: 3vh;
-    padding-bottom: 3.5vh;
+    margin: 0;
 }
 
 h3, h5{
@@ -40,31 +39,32 @@ input:focus{
 
 .searchDiv{
     display: flex;
+    align-items: center;
     height: 10vh;
 }
 
 button{
-    border-radius: 0.5vh;
+    width: 8vw;
+    border-radius: 0.3vh;
     background-color: #f55263;
     border: 0;
-    float: left;
-    margin-top: 3vh;
     margin-left: 2vw;
 }
 
 .textButton{
+    font-size: 0.83rem;
     margin: 1vh auto;
     float: none;
 }
 
 .searchButton{
     width: 20vw;
-    float: right;
-    margin-top: 2vh;
     margin-right: 7vw;
+    margin-left: auto;
 }
 
 .textSearchButton{
+    font-size: 1.17rem;
     margin: 2vh auto;
     float: none;
 }
