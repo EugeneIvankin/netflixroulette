@@ -1,13 +1,26 @@
 import React, { Component, PropTypes } from 'react'
 import '../styles/movieDetail.css'
+import { withRouter } from 'react-router-dom'
 
 export default class MovieDetail extends Component {
     render() {
+
+        const Button = withRouter(({ history}) => (
+            <button
+                className="backwardBatton"
+                onClick={() => { window.history.back()}}
+            >
+                <h2 className="backwardText">SEARCH</h2>
+            </button>
+        ));
+
+
+
         return <main className="movieDetail">
 
             <header className="headerMovieDetail">
                 <p className="logo">netflixroulette</p>
-                <button className="backwardBatton"><h2 className="backwardText">SEARCH</h2></button>
+                <Button/>
             </header>
 
             <div className="foundMovies">

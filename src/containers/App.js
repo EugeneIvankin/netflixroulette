@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Main from "../components/Main"
-import MovieDetail from "../components/MovieDetail"
 import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
+import StartPage from "./StartPage";
+import MovieDetailPage from "./MovieDetailPage"
+import MoviesSearchPage from "./MoviesSearchPage"
 
 
 export default class App extends Component {
@@ -12,17 +11,10 @@ export default class App extends Component {
        return <div>
 
            <Switch>
-              {/* <Route exact path='/' component={MovieDetail}/>
-               <Route exact path='/' component={Main}/>*/}
-               <Route exact path='/' component={Footer}/>
-               {/*<Route path='/roster' component={Roster}/>
-               <Route path='/schedule' component={Schedule}/>*/}
+               <Route exact path='/' component={StartPage}/>
+               <Route exact path='/search' component={MoviesSearchPage}/>
+               <Route exact path='/film' component={MovieDetailPage}/>
            </Switch>
-
-          {/* <MovieDetail/>
-           <Header/>
-           <Main/>
-           <Footer/>*/}
        </div>
 
     }

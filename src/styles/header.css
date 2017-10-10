@@ -3,6 +3,15 @@ header{
     background-color: #414141;
 }
 
+.divLogo{
+    display: flex;
+    height: 6vh;
+    width: 85vw;
+    margin-left: 7vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo{
     display: inline;
     font-family: Arial;
@@ -15,13 +24,13 @@ h3, h5{
     font-family: Arial;
     color: white;
     margin-left: 7vw;
-    float: left;
 }
 
 input{
-    width: 83vw;
+    width: -webkit-fill-available;
     height: 5vh;
     margin-left: 7vw;
+    margin-right: 7vw;
     background-color: black;
     border-bottom-color: #f55263;
     border-left: 0;
@@ -61,6 +70,7 @@ button{
     width: 20vw;
     margin-right: 7vw;
     margin-left: auto;
+    cursor: pointer;
 }
 
 .textSearchButton{
