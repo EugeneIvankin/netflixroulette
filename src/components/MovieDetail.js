@@ -1,10 +1,15 @@
-import React, { Component, PropTypes } from 'react'
-import '../styles/movieDetail.css'
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/movieDetail.css';
+import { withRouter } from 'react-router-dom';
 
 export default class MovieDetail extends Component {
     render() {
 
+        const { store } = this.context;
+        const state = store.getState();
+        const {movieName, movieMarc, movieGenre, movieYear, movieDurability,
+                movieStory, movieDirector, movieCast} = state.movieDetail;
         const Button = withRouter(({ history}) => (
             <button
                 className="backwardBatton"
@@ -30,17 +35,20 @@ export default class MovieDetail extends Component {
                 </figure>
 
                 <div className="movieInfo">
-                    <h1 className="movieName">Pulp Fiction</h1>
-                    <h2 className="movieMark">4.1</h2>
-                    <h2 className="movieGenre">Oscar-winning Movies</h2>
-                    <h2 className="movieYear">1994</h2>
-                    <h2 className="movieDurability">154 min</h2>
-                    <h2 className="movieStory">Weaving together three stories featuring a burger-loving hit man, his philosophical partner and a washed-up boxer, Quentin Tarantino influenced a generation of filmmakers with this crime caper`s stylized, over-the-top violence and dark comic spirit.</h2>
-                    <h4 className="movieDirector">Director: Quentin Tarantino</h4>
-                    <h4 className="movieCast">Cast: John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Harvey Keitel, Tim Roth, Amanda Plummer, Ving Rhames, Eric Stoltz, Maria de Medeiros</h4>
+                    <h1 className="movieName">{movieName}</h1>
+                    <h2 className="movieMark">{movieMarc}</h2>
+                    <h2 className="movieGenre">{movieGenre}</h2>
+                    <h2 className="movieYear">{movieYear}</h2>
+                    <h2 className="movieDurability">{movieDurability}</h2>
+                    <h2 className="movieStory">{movieStory}</h2>
+                    <h4 className="movieDirector">Director: {movieDirector}</h4>
+                    <h4 className="movieCast">Cast: {movieCast}</h4>
                 </div>
             </div>
         </main>
     }
 }
 
+MovieDetail.contextTypes = {
+    store: PropTypes.object
+};

@@ -1,9 +1,17 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import '../styles/moviesSearich.css'
 import { withRouter } from 'react-router-dom'
 
 export default class Main extends Component {
+
+
+
     render() {
+
+        const { store } = this.context;
+        const state = store.getState();
+        const {movieName, movieYear, movieGenre} = state.searchMovies;
 
         const Figure = withRouter(({ history}) => (
             <figure
@@ -11,9 +19,9 @@ export default class Main extends Component {
             >
                 <img/>
                 <figcaption>
-                    <h5 className="moviesName">KILL BILL: VOL. 2</h5>
-                    <h5 className="moviesYear">2004</h5>
-                    <h5 className="moviesGenre">Action & Adventure</h5>
+                    <h5 className="moviesName">{movieName}</h5>
+                    <h5 className="moviesYear">{movieYear}</h5>
+                    <h5 className="moviesGenre">{movieGenre}</h5>
                 </figcaption>
             </figure>
         ));
@@ -36,3 +44,6 @@ export default class Main extends Component {
     }
 }
 
+Main.contextTypes = {
+    store: PropTypes.object
+};
