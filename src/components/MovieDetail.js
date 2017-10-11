@@ -8,6 +8,7 @@ export default class MovieDetail extends Component {
 
         const { store } = this.context;
         const state = store.getState();
+
         const {movieName, movieMarc, movieGenre, movieYear, movieDurability,
                 movieStory, movieDirector, movieCast} = state.movieDetail;
         const Button = withRouter(({ history}) => (

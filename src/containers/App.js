@@ -4,10 +4,14 @@ import Route from "react-router-dom/es/Route";
 import StartPage from "./StartPage";
 import MovieDetailPage from "./MovieDetailPage"
 import MoviesSearchPage from "./MoviesSearchPage"
+import * as searchActions from '../actions/SearchActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 
-export default class App extends Component {
+export default  class App extends Component {
     render() {
+
        return <div>
 
            <Switch>
@@ -19,3 +23,12 @@ export default class App extends Component {
 
     }
 }
+
+/*
+function mapDispatchToProps(dispatch) {
+    return {
+        searchAction: bindActionCreators(searchActions, dispatch)
+    }
+}
+
+export default connect( mapDispatchToProps)(App)*/

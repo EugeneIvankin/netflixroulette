@@ -1,16 +1,27 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import '../styles/header.css'
-import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 
 export default class Header extends Component {
 
+
+    Click(/*history*/){
+        this.props.getMoviesByName('fff');
+        console.log(this.props.history);
+        this.props.history.push('/search');
+        //console.log("his "+history);
+        //this.props.history.push('/search');
+        //history.push('/search');
+    }
+
+
     render() {
+
 
         const Button = withRouter(({ history}) => (
             <button
                 className="searchButton"
-                onClick={() => { history.push('/search') }}
+                onClick={()=>{this.Click({/*history*/})}}
             >
                 <h3 className="textSearchButton">SEARCH</h3>
             </button>
@@ -32,3 +43,4 @@ export default class Header extends Component {
         </header>
     }
 }
+

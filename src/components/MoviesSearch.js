@@ -5,6 +5,11 @@ import { withRouter } from 'react-router-dom'
 
 export default class Main extends Component {
 
+// вынести withRouter
+// клики вынести
+// проверить наличие history через рендер
+// проверить именование
+
 
 
     render() {

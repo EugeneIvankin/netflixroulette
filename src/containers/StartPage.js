@@ -1,13 +1,28 @@
 import React, { Component, PropTypes } from 'react'
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Main from "../components/Main"
+import Main from "../components/Main";
+import * as searchActions from '../actions/SearchActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 
-export default class StartPage extends Component {
+
+ class StartPage extends Component {
+
+
     render() {
+
+        const {getMoviesByName} = this.props.searchAction;
+
+        console.log(this.props.history);
+
+        const {history} = this.props;
+
+
+
         return <div>
-             <Header/>
+             <Header getMoviesByName={getMoviesByName} history={history}/>
              <Main/>
              <Footer/>
         </div>
@@ -15,3 +30,14 @@ export default class StartPage extends Component {
     }
 }
 
+
+///передавать все поля в props
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        searchAction: bindActionCreators(searchActions, dispatch)
+    }
+}
+
+export default connect(null, mapDispatchToProps)(StartPage)
