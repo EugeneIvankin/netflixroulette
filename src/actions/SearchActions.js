@@ -12,7 +12,7 @@ export function getMoviesByName(name) {
 
     fetch(`http://netflixroulette.net/api/api.php?title=${name}`)
         .then(response=>{
-
+            console.log(response);
         })
 
 

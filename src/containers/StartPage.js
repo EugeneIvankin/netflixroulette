@@ -7,32 +7,17 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 
-
- class StartPage extends Component {
-
-
+ class startPage extends Component {
     render() {
-
         const {getMoviesByName} = this.props.searchAction;
-
-        console.log(this.props.history);
-
         const {history} = this.props;
-
-
-
         return <div>
              <Header getMoviesByName={getMoviesByName} history={history}/>
              <Main/>
              <Footer/>
         </div>
-
     }
 }
-
-
-///передавать все поля в props
-
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -40,4 +25,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(StartPage)
+export default connect(null, mapDispatchToProps)(startPage)

@@ -3,26 +3,26 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MoviesSearch from "../components/MoviesSearch"
 import { connect } from 'react-redux'
+import * as searchActions from '../actions/SearchActions'
+import { bindActionCreators } from 'redux'
 
 
-
-export default class MoviesSearchPage extends Component {
+class MoviesSearchPage extends Component {
     render() {
-
+        const {getMoviesByName} = this.props.searchAction;
+        const {history} = this.props;
         return <div>
-            <Header/>
+            <Header getMoviesByName={getMoviesByName} history={history}/>
             <MoviesSearch/>
             <Footer/>
         </div>
-
     }
 }
 
-
-/*function mapStateToProps (state) {
+function mapDispatchToProps(dispatch) {
     return {
-        movie: state
+        searchAction: bindActionCreators(searchActions, dispatch)
     }
 }
 
-export default connect(mapStateToProps)(MoviesSearchPage)*/
+export default connect(null, mapDispatchToProps)(MoviesSearchPage)
