@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4569780-c819-41e1-a3c7-1864268162ff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routers/routers.js" afterPath="" />
+    <list default="true" id="b4569780-c819-41e1-a3c7-1864268162ff" name="Default" comment="add">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/SearchActions.js" afterPath="$PROJECT_DIR$/src/actions/SearchActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Main.js" afterPath="$PROJECT_DIR$/src/components/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MoviesSearch.js" afterPath="$PROJECT_DIR$/src/components/MoviesSearch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/SearchMovies.js" afterPath="$PROJECT_DIR$/src/constants/SearchMovies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/App.js" afterPath="$PROJECT_DIR$/src/containers/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/MoviesSearchPage.js" afterPath="$PROJECT_DIR$/src/containers/MoviesSearchPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/StartPage.js" afterPath="$PROJECT_DIR$/src/containers/StartPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducer/searchMovies.js" afterPath="$PROJECT_DIR$/src/reducer/searchMovies.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -132,8 +121,8 @@
       <file leaf-file-name="searchMovies.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reducer/searchMovies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -604,7 +593,7 @@
       <workItem from="1507570772764" duration="1653000" />
       <workItem from="1507617306627" duration="21424000" />
       <workItem from="1507703770454" duration="24950000" />
-      <workItem from="1507789752311" duration="28115000" />
+      <workItem from="1507789752311" duration="28163000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1507630518677</created>
@@ -641,11 +630,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507734256232</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add">
+      <created>1507820894937</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507820894937</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111971000" />
+    <option name="totallyTimeSpent" value="112019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -1113,8 +1109,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducer/searchMovies.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
