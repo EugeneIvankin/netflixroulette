@@ -10,12 +10,19 @@ import { bindActionCreators } from 'redux'
 class MoviesSearchPage extends Component {
     render() {
         const {getMoviesByName} = this.props.searchAction;
-        const {history} = this.props;
+        const { history} = this.props;
+        const { arr } = this.props.movies;
         return <div>
             <Header getMoviesByName={getMoviesByName} history={history}/>
-            <MoviesSearch/>
+            <MoviesSearch data={ arr } history={history}/>
             <Footer/>
         </div>
+    }
+}
+
+function mapStateToProps (state) {
+    return {
+        movies: state.searchMovies,
     }
 }
 
@@ -25,4 +32,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(MoviesSearchPage)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesSearchPage)

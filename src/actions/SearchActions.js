@@ -1,36 +1,65 @@
-import { GET_MOVIES_BY_NAME, GET_MOVIES_BY_DIRECTOR } from '../constants/SearchMovies'
+import { GET_MOVIES_BY_NAME_REQUEST, GET_MOVIES_BY_DIRECTOR_REQUEST, GET_MOVIES_SUCCESS, GET_MOVIES_ERR } from '../constants/SearchMovies'
 
 
 export function getMoviesByName(name) {
+    return function (dispatch) {
+        dispatch({
+            type: GET_MOVIES_BY_NAME_REQUEST,
+            payload: name
+        });
+        getMovies(name,dispatch)
+    }
+}
 
-    console.log(name);
+function getMovies(name, dispath) {
 
-    return {
-        type: GET_MOVIES_BY_NAME,
-        payload: name
+    function status(response) {
+        if (response.status >= 200 && response.status < 300) {
+            return Promise.resolve(response)
+        } else {
+            return Promise.reject(new Error(response.statusText))
+        }
     }
 
-    fetch(`http://netflixroulette.net/api/api.php?title=${name}`)
-        .then(response=>{
-            console.log(response);
-        })
+    function json(response) {
+        return response.json()
+    }
 
+    fetch(`https://netflixroulette.net/api/api.php?director=${name}`)
+        .then(status)
+        .then(json)
+        .then(function(data) {
+            dispath({
+                type: GET_MOVIES_SUCCESS,
+                payload: data
+            });
+        }).catch(function() {
+            dispath({
+                type: GET_MOVIES_ERR,
+            });
+    });
 
-       /* netflixroulette.createRequest(name, function (resp) {
+    /**fetch(`https://netflixroulette.net/api/api.php?title=${name}`)
+        if (response.status>= 200 && response.status < 300){
 
-            console.log("Breaking Bad's Summary = " + resp.summary);
+        .then(function(response) {
+                return response.json()
+            })
+                .then(function (json) {
+                    dispath({
+                        type: GET_MOVIES_SUCCESS,
+                        payload: json
+                    })
+                })
+        }
 
-
-        });*/
-
+        .catch(function (err) {
+            console.log('err '+err);
+            dispath({
+                type: GET_MOVIES_ERR,
+            })
+        })*/
 }
 
 
 
-/*
-export function getMoviesByDirector(director) {
-    return {
-        type: GET_MOVIES_BY_DIRECTOR,
-        payload: director
-    }
-}*/

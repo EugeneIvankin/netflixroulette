@@ -11,9 +11,11 @@ export default  class App extends Component {
        return <div>
            <Switch>
                <Route exact path='/' component={StartPage}/>
-               <Route exact path='/search' component={MoviesSearchPage}/>
-               <Route exact path='/film' component={MovieDetailPage}/>
+               <Route exact path='/search/:string' component={MoviesSearchPage}/>
+               <Route exact path='/film/:string' component={MovieDetailPage}/>
            </Switch>
+
+           {/* footer*/}
        </div>
     }
 }

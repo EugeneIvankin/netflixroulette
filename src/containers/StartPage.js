@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 
- class startPage extends Component {
+class StartPage extends Component {
     render() {
         const {getMoviesByName} = this.props.searchAction;
         const {history} = this.props;
@@ -25,4 +25,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(startPage)
+export default connect(null, mapDispatchToProps)(StartPage)
