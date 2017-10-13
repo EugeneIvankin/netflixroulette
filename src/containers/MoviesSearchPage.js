@@ -1,22 +1,30 @@
 import React, { Component, PropTypes } from 'react'
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MoviesSearch from "../components/MoviesSearch"
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
+import Main from "../components/Main";
 
 
 class MoviesSearchPage extends Component {
     render() {
-        const {getMoviesByName} = this.props.searchAction;
+        const {getMoviesByDirector, getMoviesByName} = this.props.searchAction;
         const { history} = this.props;
-        const { arr } = this.props.movies;
-        return <div>
-            <Header getMoviesByName={getMoviesByName} history={history}/>
-            <MoviesSearch data={ arr } history={history}/>
-            <Footer/>
-        </div>
+        const { foundedMovies } = this.props.movies;
+        if (foundedMovies.length !== 0){
+            return <div>
+                <Header getMoviesByDirector={getMoviesByDirector} getMoviesByName={getMoviesByName} history={history}/>
+                <MoviesSearch data={ foundedMovies } history={history}/>
+            </div>
+        }
+        else {
+            return <div>
+                <Header getMoviesByDirector={getMoviesByDirector} getMoviesByName={getMoviesByName} history={history}/>
+                <Main/>
+            </div>
+        }
+
     }
 }
 

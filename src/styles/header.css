@@ -55,9 +55,17 @@ input:focus{
 button{
     width: 8vw;
     border-radius: 0.3vh;
-    background-color: #f55263;
+    background-color: #3c3c3c;
     border: 0;
     margin-left: 2vw;
+}
+
+button:focus{
+    outline: none;
+}
+
+#title{
+    background-color: #f55263;
 }
 
 .textButton{
@@ -71,6 +79,7 @@ button{
     margin-right: 7vw;
     margin-left: auto;
     cursor: pointer;
+    background-color: #f55263;
 }
 
 .textSearchButton{

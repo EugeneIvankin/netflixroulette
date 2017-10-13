@@ -1,10 +1,7 @@
-import { GET_MOVIES_BY_NAME_REQUEST, GET_MOVIES_BY_DIRECTOR_REQUEST, GET_MOVIES_SUCCESS, GET_MOVIES_ERR } from '../constants/SearchMovies'
+import { GET_MOVIES_SUCCESS, GET_MOVIES_ERR } from '../constants/SearchMovies'
 
 const initialState = {
-    arr: []
-    /*movieName: null,
-    movieYear: null,
-    movieGenre: null*/
+    foundedMovies: []
 };
 
 function newJson(movies) {
@@ -18,19 +15,14 @@ function newJson(movies) {
 }
 
 export default function searchMovies(state = initialState, action) {
-
     switch (action.type) {
         case GET_MOVIES_SUCCESS:
-            return {...state, /*movieName:action.payload.show_title, movieYear:action.payload.release_year, movieGenre:action.payload.category*/ arr:newJson(action.payload)};
+            return {...state, foundedMovies:newJson(action.payload)};
 
         case GET_MOVIES_ERR:
-            return state; /////// отображать главную странуцу
-
-        case GET_MOVIES_BY_DIRECTOR_REQUEST:
-            return {...state};
+            return {...state, foundedMovies:newJson(action.payload)};
 
         default:
             return state;
     }
-
 }

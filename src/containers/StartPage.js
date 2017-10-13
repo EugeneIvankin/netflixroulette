@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Footer from "../components/Footer";
+
 import Header from "../components/Header";
 import Main from "../components/Main";
 import * as searchActions from '../actions/SearchActions'
@@ -9,12 +9,11 @@ import { connect } from 'react-redux'
 
 class StartPage extends Component {
     render() {
-        const {getMoviesByName} = this.props.searchAction;
+        const {getMoviesByDirector} = this.props.searchAction;
         const {history} = this.props;
         return <div>
-             <Header getMoviesByName={getMoviesByName} history={history}/>
+             <Header getMoviesByName={getMoviesByDirector} history={history}/>
              <Main/>
-             <Footer/>
         </div>
     }
 }

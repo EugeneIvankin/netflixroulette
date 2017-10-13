@@ -7,12 +7,10 @@ export default class Main extends Component {
     movieDetail(movieName){
         this.props.history.push(`/film/${movieName}`);
     }
-    
 
     render() {
         const {data} = this.props;
-
-        var template = data.map(function (item) {
+        var moviesFild = data.map(function (item) {
             return(
                 <div className="foundMovies" key={item.movieId}>
                     <figure onClick={()=>{this.movieDetail(item.movieName)}}>
@@ -27,7 +25,6 @@ export default class Main extends Component {
             )
         });
 
-
         return <main>
             <nav>
                 <h5 className="moviesFoundText"> {data.length} movies found </h5>
@@ -35,10 +32,7 @@ export default class Main extends Component {
                 <h5 className="sortText"> realease date</h5>
                 <h5 className="sortText"> rating </h5>
             </nav>
-
-            {template}
-
-
+            {moviesFild}
         </main>
     }
 }
