@@ -1,29 +1,23 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Header from "../components/Header";
 import MoviesSearch from "../components/MoviesSearch"
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
-import Main from "../components/Main";
+import * as movieDetail from "../actions/MovieDetailActions";
 
 
 class MoviesSearchPage extends Component {
     render() {
-        const {getMoviesByDirector, getMoviesByName} = this.props.searchAction;
-        const { history} = this.props;
+        const {getMoviesByName} = this.props.searchAction;
+        const {getMovieInfo} = this.props.movieDetail;
+        const { history,match} = this.props;
         const { foundedMovies } = this.props.movies;
-        if (foundedMovies.length !== 0){
-            return <div>
-                <Header getMoviesByDirector={getMoviesByDirector} getMoviesByName={getMoviesByName} history={history}/>
-                <MoviesSearch data={ foundedMovies } history={history}/>
-            </div>
-        }
-        else {
-            return <div>
-                <Header getMoviesByDirector={getMoviesByDirector} getMoviesByName={getMoviesByName} history={history}/>
-                <Main/>
-            </div>
-        }
+
+        return <div>
+            <Header getMoviesByName={getMoviesByName} history={history}/>
+            <MoviesSearch getMovieInfo={getMovieInfo} getMoviesByName={getMoviesByName} data={ foundedMovies } history={history} match={match}/>
+        </div>
 
     }
 }
@@ -34,10 +28,11 @@ function mapStateToProps (state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        searchAction: bindActionCreators(searchActions, dispatch)
-    }
-}
+ function mapDispatchToProps(dispatch) {
+     return {
+         searchAction: bindActionCreators(searchActions, dispatch),
+         movieDetail: bindActionCreators(movieDetail, dispatch)
+     }
+ }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesSearchPage)

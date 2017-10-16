@@ -1,20 +1,29 @@
-import React, { Component, PropTypes } from 'react'
-
+import React, { Component } from 'react'
 import Header from "../components/Header";
-import Main from "../components/Main";
+import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import Main from "../components/Main";
 
 
-class StartPage extends Component {
+class MoviesSearchPage extends Component {
     render() {
-        const {getMoviesByDirector} = this.props.searchAction;
-        const {history} = this.props;
+        const {getMoviesByName} = this.props.searchAction;
+        const {getPopMovies} = this.props.searchAction;
+        const { history } = this.props;
+        const { foundedMovies } = this.props.movies;
+
         return <div>
-             <Header getMoviesByName={getMoviesByDirector} history={history}/>
-             <Main/>
+            <Header getMoviesByName={getMoviesByName} history={history}/>
+            <Main getPopMovies={getPopMovies} data={ foundedMovies }/>
         </div>
+
+    }
+}
+
+function mapStateToProps (state) {
+    return {
+        movies: state.searchMovies,
     }
 }
 
@@ -24,4 +33,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(StartPage)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesSearchPage)

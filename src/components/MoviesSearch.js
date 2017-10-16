@@ -4,21 +4,28 @@ import '../styles/moviesSearich.css'
 
 export default class Main extends Component {
 
-    movieDetail(movieName){
+    getMovie(movieName){
         this.props.history.push(`/film/${movieName}`);
+        this.props.getMovieInfo(movieName);
+    }
+
+    componentWillMount(){
+        this.props.getMoviesByName(this.props.match.params.string);
     }
 
     render() {
+
+
         const {data} = this.props;
-        var moviesFild = data.map(function (item) {
+        var moviesFild = data.map((item) => {
             return(
                 <div className="foundMovies" key={item.movieId}>
-                    <figure onClick={()=>{this.movieDetail(item.movieName)}}>
-                        <img src={item.moviePoster}/>
+                    <figure onClick={()=>{this.getMovie(item.movieName)}}>
+                        <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`}/>
                         <figcaption>
                             <h5 className="moviesName">{item.movieName}</h5>
                             <h5 className="moviesYear">{item.movieYear}</h5>
-                            <h5 className="moviesGenre">{item.movieGenre}</h5>
+                            <h5 className="moviesGenre">{item.movieLevel}</h5>
                         </figcaption>
                     </figure>
                 </div>
