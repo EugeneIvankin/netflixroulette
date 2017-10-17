@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import '../styles/main.css'
+import '../styles/notFound.css'
 
-export default class Main extends Component {
+export default class NotFoundPage extends Component {
     render() {
         return <main>
             <nav></nav>

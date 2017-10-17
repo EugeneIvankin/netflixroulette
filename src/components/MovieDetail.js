@@ -4,26 +4,27 @@ import '../styles/movieDetail.css';
 import { withRouter } from 'react-router-dom';
 
 export default class MovieDetail extends Component {
+
     render() {
 
-        const {movieName, movieMarc, movieGenre, movieYear, movieDurability,
+        /*const {movieName, movieMarc, movieGenre, movieYear, movieDurability,
                 movieStory, movieDirector, movieCast} = state.movieDetail;
-        const Button = withRouter(({ history}) => (
+
+*/
+        /*const Button = withRouter(({ history}) => (
             <button
                 className="backwardBatton"
                 onClick={() => { window.history.back()}}
             >
                 <h2 className="backwardText">SEARCH</h2>
             </button>
-        ));
-
-
+        ));*/
 
         return <main className="movieDetail">
 
-            <header className="headerMovieDetail">
+           {/* <header className="headerMovieDetail">
                 <p className="logo">netflixroulette</p>
-                <Button/>
+              /!*  <Button/>*!/
             </header>
 
             <div className="foundMovies">
@@ -42,7 +43,7 @@ export default class MovieDetail extends Component {
                     <h4 className="movieDirector">Director: {movieDirector}</h4>
                     <h4 className="movieCast">Cast: {movieCast}</h4>
                 </div>
-            </div>
+            </div>*/}
         </main>
     }
 }

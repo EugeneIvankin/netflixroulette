@@ -7,15 +7,18 @@ import Main from "../components/Main";
 
 
 class MoviesSearchPage extends Component {
+
+    componentWillMount(){
+        this.props.searchAction.getPopMovies();
+    }
+
     render() {
-        const {getMoviesByName} = this.props.searchAction;
-        const {getPopMovies} = this.props.searchAction;
         const { history } = this.props;
         const { foundedMovies } = this.props.movies;
 
         return <div>
-            <Header getMoviesByName={getMoviesByName} history={history}/>
-            <Main getPopMovies={getPopMovies} data={ foundedMovies }/>
+            <Header history={history}/>
+            <Main data={ foundedMovies }/>
         </div>
 
     }

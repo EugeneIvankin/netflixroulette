@@ -2,32 +2,33 @@ import React, { Component } from 'react'
 import '../styles/moviesSearich.css'
 
 
+
 export default class Main extends Component {
 
-    getMovie(movieName){
-        this.props.history.push(`/film/${movieName}`);
-        this.props.getMovieInfo(movieName);
+    constructor(props){
+        super(props);
+        this.state = {value:''};
+        this.getMovie = this.getMovie.bind(this);
     }
 
-    componentWillMount(){
-        this.props.getMoviesByName(this.props.match.params.string);
+    getMovie(movieId) {
+        this.props.history.push(`/film/${movieId}`);
     }
 
     render() {
-
-
         const {data} = this.props;
-        var moviesFild = data.map((item) => {
+
+        var moviesFild = data.map( (item)=> {
             return(
-                <div className="foundMovies" key={item.movieId}>
-                    <figure onClick={()=>{this.getMovie(item.movieName)}}>
+                <div className="movie" onClick={() => {this.getMovie(item.movieId)}} title={item.movieName} key={item.movieId}>
+                    <figure>
                         <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`}/>
-                        <figcaption>
-                            <h5 className="moviesName">{item.movieName}</h5>
-                            <h5 className="moviesYear">{item.movieYear}</h5>
-                            <h5 className="moviesGenre">{item.movieLevel}</h5>
-                        </figcaption>
                     </figure>
+                    <figcaption>
+                        <h5 className="moviesName">{item.movieName}</h5>
+                        <h5 className="moviesYear">{item.movieYear}</h5>
+                        <h5 className="moviesLevel">{item.movieLevel}</h5>
+                    </figcaption>
                 </div>
             )
         });
@@ -39,7 +40,9 @@ export default class Main extends Component {
                 <h5 className="sortText"> realease date</h5>
                 <h5 className="sortText"> rating </h5>
             </nav>
-            {moviesFild}
+            <div className="main">
+                {moviesFild}
+            </div>
         </main>
     }
 }

@@ -4,15 +4,24 @@ import '../styles/header.css'
 
 export default class Header extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {value:''};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
+    handleChange(event){
+        this.setState({value: event.target.value})
+    }
 
-    searchClick = () => { // прочитать bind, call apply
-        this.props.getMoviesByName(this.input.value);
-        this.props.history.push(`/search/${this.input.value}`);
-    };
+    handleSubmit(event){
+        event.preventDefault();
+        this.props.history.push(`/search/${this.state.value}`);
+    }
 
+    // прочитать bind, call apply
     // прочитать про инпут, сделать форм
-
     //убарть ref, создав контролируемый компонент
 
     render() {
@@ -21,12 +30,10 @@ export default class Header extends Component {
                 <p className="logo">netflixroulette</p>
             </div>
             <h3>FIND YOUR MOVIE</h3>
-            <input placeholder="Enter your movie" name="title"  ref={node => {this.input = node;}}></input>
-            <div className="searchDiv">
-                <h5>SEARCH BY</h5>
-                <button id="title"><h5 className="textButton">TITLE</h5></button>
-                <button className="searchButton" onClick={this.searchClick} ><h3 className="textSearchButton">SEARCH</h3></button>
-            </div>
+            <form className="searchDiv" onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter your movie"></input>
+                <button type="submit"><h3 className="textSearchButton">SEARCH</h3></button>
+            </form>
         </header>
     }
 }

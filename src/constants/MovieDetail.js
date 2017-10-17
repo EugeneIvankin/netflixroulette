@@ -1,1 +1,2 @@
-export const GET_MOVIE_INFO = 'GET_MOVIE_INFO';
+export const GET_MOVIE_SUCCESS = 'GET_MOVIE_SUCCESS';
+export const GET_MOVIE_ERR ='GET_MOVIE_ERR';

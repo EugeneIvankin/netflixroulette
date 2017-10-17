@@ -1,24 +1,32 @@
-import { GET_MOVIE_INFO } from '../constants/MovieDetail'
+import {GET_MOVIE_SUCCESS, GET_MOVIE_ERR} from '../constants/MovieDetail'
 
 const initialState = {
-    movieName: 'Pulp Fiction',
-    movieMarc: 4.1,
-    movieGenre: 'Oscar-winning Movies',
-    movieYear: 1994,
-    movieDurability: '154 min',
-    movieStory: 'Weaving together three stories featuring a burger-loving hit man, ' +
-    'his philosophical partner and a washed-up boxer, Quentin Tarantino influenced a generation ' +
-    'of filmmakers with this crime caper`s stylized, over-the-top violence and dark comic spirit.',
-    movieDirector: 'Quentin Tarantino',
-    movieCast: 'John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Harvey Keitel, Tim Roth, ' +
-    'Amanda Plummer, Ving Rhames, Eric Stoltz, Maria de Medeiros'
+    movieName: '',
+    movieLevel: '',
+    movieYear: '',
+    movieDurability: '',
+    movieStory: '',
 };
+
+function newJson(movie) {
+    return {
+        movieName:movie.title,
+        movieLevel:movie.vote_average,
+        movieYear:movie.release_date,
+        movieDurability:movie.runtime,
+        movieStory:movie.overview
+    }
+}
 
 export default function MovieDetail(state = initialState, action) {
 
     switch (action.type) {
-        case GET_MOVIE_INFO:
+        case GET_MOVIE_SUCCESS:
+            console.log('aaaaa '+action.payload.title,+" "+action.payload.vote_average+" "+action.payload.release_date+" "+action.payload.runtime+" "+action.payload.overview);
             return {...state};
+
+        case GET_MOVIE_ERR:
+            /*return {...state, foundedMovies:newJson(action.payload)};*/
 
         default:
             return state;
