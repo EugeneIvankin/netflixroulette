@@ -11,16 +11,14 @@ class MoviesSearchPage extends Component {
     componentWillMount(){
         this.props.searchAction.getPopMovies();
     }
-
     render() {
         const { history } = this.props;
         const { foundedMovies } = this.props.movies;
 
         return <div>
             <Header history={history}/>
-            <Main data={ foundedMovies }/>
+            <Main foundedMovies={ foundedMovies } history={history}/>
         </div>
-
     }
 }
 

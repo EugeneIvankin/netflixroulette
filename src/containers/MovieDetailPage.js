@@ -3,26 +3,30 @@ import MovieDetail from "../components/MovieDetail";
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
-import * as movieDetail from "../actions/MovieDetailActions";
+import * as movieDetailAction from "../actions/MovieDetailActions";
 import MoviesSearch from "../components/MoviesSearch"
 
 
 class MovieDetailPage extends Component {
 
     componentDidMount(){
-        this.props.movieDetail.getMovieInfo(this.props.match.params.string);
-        this.props.searchAction.getMoviesByName("IT");
+        this.props.movieDetailAction.getMovieInfo(this.props.match.params.string);
     }
 
+    componentWillReceiveProps(nextProps){
+        if(this.props.match.params.string!==nextProps.match.params.string){
+            this.props.movieDetailAction.getMovieInfo(nextProps.match.params.string);
+        }
+    }
 
     render() {
-        const {getMovieInfo} = this.props.movieDetail;
-        const { history} = this.props;
         const { foundedMovies } = this.props.movies;
+        const { foundedMovie } = this.props.movie;
+        const { history} = this.props;
 
         return <div>
-            <MovieDetail/>
-            <MoviesSearch getMovieInfo={getMovieInfo} data={ foundedMovies } history={history}/>
+            <MovieDetail movie={foundedMovie}/>
+            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie}  history={history}/>
         </div>
     }
 }
@@ -30,13 +34,14 @@ class MovieDetailPage extends Component {
 function mapStateToProps (state) {
     return {
         movies: state.searchMovies,
+        movie: state.movieDetail
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         searchAction: bindActionCreators(searchActions, dispatch),
-        movieDetail: bindActionCreators(movieDetail, dispatch)
+        movieDetailAction: bindActionCreators(movieDetailAction, dispatch)
     }
 }
 

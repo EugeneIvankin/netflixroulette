@@ -1,33 +1,35 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/moviesSearich.css'
+import Movie from './Movie'
+
 
 export default class Main extends Component {
+    constructor(props){
+        super(props);
+        this.getMovie = this.getMovie.bind(this);
+    }
+
+    getMovie(movieId) {
+        this.props.history.push(`/film/${movieId}`);
+    }
+
+    renderList(){
+        const {foundedMovies} = this.props;
+        return foundedMovies.map((item)=>
+               <Movie item={item} getMovie={this.getMovie}  key={item.movieId}/>);
+    }
 
     render() {
-
-        const {data} = this.props;
-
-        var moviesFild = data.map(function (item) {
-            return(
-                <div className="movie" title={item.movieName} key={item.movieId}>
-                    <figure>
-                        <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`}/>
-                    </figure>
-                    <figcaption>
-                        <h5 className="moviesName">{item.movieName}</h5>
-                        <h5 className="moviesYear">{item.movieYear}</h5>
-                        <h5 className="moviesLevel">{item.movieLevel}</h5>
-                    </figcaption>
-                </div>
-            )
-        });
-
         return <main>
             <nav></nav>
             <div className="main">
-                {moviesFild}
+                {this.renderList()}
             </div>
         </main>
     }
 }
 
+Main.propTypes = {
+ foundedMovies: PropTypes.array.isRequired
+};

@@ -1,33 +1,28 @@
 import {GET_MOVIE_SUCCESS, GET_MOVIE_ERR} from '../constants/MovieDetail'
 
 const initialState = {
-    movieName: '',
-    movieLevel: '',
-    movieYear: '',
-    movieDurability: '',
-    movieStory: '',
+    foundedMovie:null
 };
 
-function newJson(movie) {
+const newJson = (movie) => {
     return {
+        movieId:movie.id,
         movieName:movie.title,
+        moviePoster:movie.poster_path,
         movieLevel:movie.vote_average,
         movieYear:movie.release_date,
         movieDurability:movie.runtime,
         movieStory:movie.overview
     }
-}
+};
 
 export default function MovieDetail(state = initialState, action) {
 
     switch (action.type) {
         case GET_MOVIE_SUCCESS:
-            console.log('aaaaa '+action.payload.title,+" "+action.payload.vote_average+" "+action.payload.release_date+" "+action.payload.runtime+" "+action.payload.overview);
-            return {...state};
-
+            return {...state, foundedMovie:newJson(action.payload)};
         case GET_MOVIE_ERR:
             /*return {...state, foundedMovies:newJson(action.payload)};*/
-
         default:
             return state;
     }

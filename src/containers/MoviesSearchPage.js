@@ -4,7 +4,6 @@ import MoviesSearch from "../components/MoviesSearch"
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
-import * as movieDetail from "../actions/MovieDetailActions";
 
 
 class MoviesSearchPage extends Component {
@@ -20,13 +19,13 @@ class MoviesSearchPage extends Component {
     }
 
     render() {
-        const {getMovieInfo} = this.props.movieDetail;
         const { history} = this.props;
         const { foundedMovies } = this.props.movies;
+        const { foundedMovie } = this.props.movie;
 
         return <div>
             <Header history={history}/>
-            <MoviesSearch getMovieInfo={getMovieInfo} data={ foundedMovies } history={history}/>
+            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} history={history}/>
         </div>
 
     }
@@ -35,13 +34,13 @@ class MoviesSearchPage extends Component {
     function mapStateToProps (state) {
         return {
             movies: state.searchMovies,
+            movie: state.movieDetail
         }
     }
 
     function mapDispatchToProps(dispatch) {
         return {
             searchAction: bindActionCreators(searchActions, dispatch),
-            movieDetail: bindActionCreators(movieDetail, dispatch)
         }
     }
 
