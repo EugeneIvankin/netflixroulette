@@ -4,6 +4,15 @@ import '../styles/movieDetail.css';
 
 export default class MovieDetail extends Component {
 
+    constructor(props){
+        super(props);
+        this.backToSearch = this.backToSearch.bind(this);
+    }
+
+    backToSearch() {
+        this.props.history.push(`/`);
+    }
+
     render() {
         const {movie} = this.props;
 
@@ -15,7 +24,7 @@ export default class MovieDetail extends Component {
 
             <header className="headerMovieDetail">
                 <p className="logo">netflixroulette</p>
-                <button className="backwardBatton" onClick={() => { window.history.back()}}><h2 className="backwardText">SEARCH</h2></button>
+                <button className="backwardBatton" onClick={() => {this.backToSearch(movie.movieName)}}><h2 className="backwardText">SEARCH</h2></button>
             </header>
 
             <div className="foundMovie">
@@ -35,3 +44,6 @@ export default class MovieDetail extends Component {
     }
 }
 
+MovieDetail.propTypes = {
+    movie: PropTypes.object
+};

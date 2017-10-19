@@ -10,12 +10,12 @@ import MoviesSearch from "../components/MoviesSearch"
 class MovieDetailPage extends Component {
 
     componentDidMount(){
-        this.props.movieDetailAction.getMovieInfo(this.props.match.params.string);
+        this.props.getMovieInfo(this.props.match.params.string);
     }
 
     componentWillReceiveProps(nextProps){
         if(this.props.match.params.string!==nextProps.match.params.string){
-            this.props.movieDetailAction.getMovieInfo(nextProps.match.params.string);
+            this.props.getMovieInfo(nextProps.match.params.string);
         }
     }
 
@@ -23,10 +23,11 @@ class MovieDetailPage extends Component {
         const { foundedMovies } = this.props.movies;
         const { foundedMovie } = this.props.movie;
         const { history} = this.props;
+        const {sortMovies} = this.props.searchAction;
 
         return <div>
-            <MovieDetail movie={foundedMovie}/>
-            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie}  history={history}/>
+            <MovieDetail movie={foundedMovie} history={history}/>
+            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} sortMovies={sortMovies} history={history}/>
         </div>
     }
 }
@@ -41,7 +42,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps(dispatch) {
     return {
         searchAction: bindActionCreators(searchActions, dispatch),
-        movieDetailAction: bindActionCreators(movieDetailAction, dispatch)
+        getMovieInfo: bindActionCreators(movieDetailAction.getMovieInfo, dispatch)
     }
 }
 

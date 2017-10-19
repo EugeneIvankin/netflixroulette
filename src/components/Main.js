@@ -5,14 +5,10 @@ import Movie from './Movie'
 
 
 export default class Main extends Component {
-    constructor(props){
-        super(props);
-        this.getMovie = this.getMovie.bind(this);
-    }
-
-    getMovie(movieId) {
+    getMovie = (movieId) => {
         this.props.history.push(`/film/${movieId}`);
-    }
+        window.scrollTo(0,0);
+    };
 
     renderList(){
         const {foundedMovies} = this.props;

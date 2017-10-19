@@ -60,18 +60,16 @@ button{
     border-radius: 0.3vh;
     border: 0;
     width: 20vw;
+    height: 7vh;
     margin-right: 7vw;
     margin-left: auto;
     cursor: pointer;
     background-color: #f55263;
+    font-family: Arial;
+    font-size: 1.5rem;
+    color: white;
 }
 
 button:focus{
     outline: none;
-}
-
-.textSearchButton{
-    font-size: 1.17rem;
-    margin: 2vh auto;
-    float: none;
 }

@@ -5,7 +5,7 @@ const Movie = ({item, getMovie}) => {
     return(
         <div className="movie" onClick={() => {getMovie(item.movieId)}} title={item.movieName}>
             <figure>
-                <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`}/>
+                <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`} alt={item.movieName}/>
             </figure>
             <figcaption>
                 <h5 className="moviesName">{item.movieName}</h5>

@@ -20,12 +20,13 @@ class MoviesSearchPage extends Component {
 
     render() {
         const { history} = this.props;
-        const { foundedMovies } = this.props.movies;
+        const { foundedMovies} = this.props.movies;
         const { foundedMovie } = this.props.movie;
+        const {sortMovies} = this.props.searchAction;
 
         return <div>
             <Header history={history}/>
-            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} history={history}/>
+            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} sortMovies={sortMovies} history={history}/>
         </div>
 
     }

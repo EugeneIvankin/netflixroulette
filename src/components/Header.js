@@ -20,10 +20,6 @@ export default class Header extends Component {
         this.props.history.push(`/search/${this.state.value}`);
     }
 
-    // прочитать bind, call apply
-    // прочитать про инпут, сделать форм
-    //убарть ref, создав контролируемый компонент
-
     render() {
         return <header>
             <div className="divLogo">
@@ -31,8 +27,8 @@ export default class Header extends Component {
             </div>
             <h3>FIND YOUR MOVIE</h3>
             <form className="searchDiv" onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter your movie"></input>
-                <button type="submit"><h3 className="textSearchButton">SEARCH</h3></button>
+                <input type="text" name="movie" value={this.state.value} onChange={this.handleChange} placeholder="Enter your movie"></input>
+                <button type="submit">SEARCH</button>
             </form>
         </header>
     }

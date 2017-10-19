@@ -1,13 +1,13 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import '../styles/notFound.css'
 
-export default class NotFoundPage extends Component {
-    render() {
-        return <main>
-            <nav></nav>
+const NotFoundPage = () => {
+    return(
             <div className="divNoFilmsFound">
                 <h1 className="textNoFilmsFound"> No films found </h1>
             </div>
-        </main>
-    }
-}
+    )
+
+};
+
+export default NotFoundPage;
