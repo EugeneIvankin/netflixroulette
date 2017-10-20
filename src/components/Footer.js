@@ -1,10 +1,12 @@
-import React, { Component, PropTypes } from 'react'
-import '../styles/footer.css'
+import React from 'react';
+import '../styles/footer.css';
 
-export default class Footer extends Component {
-    render() {
-        return <footer>
+const Footer = () => {
+    return(
+        <footer>
             <p>netflixroulette</p>
         </footer>
-    }
-}
+    )
+};
+
+export default Footer;

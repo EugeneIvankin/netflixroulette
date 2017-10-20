@@ -1,13 +1,12 @@
-import React from 'react'
-import '../styles/notFound.css'
+import React from 'react';
+import '../styles/notFound.css';
 
 const NotFoundPage = () => {
     return(
-            <div className="divNoFilmsFound">
-                <h1 className="textNoFilmsFound"> No films found </h1>
-            </div>
+        <div className="divNoFilmsFound">
+            <p className="textNoFilmsFound"> No films found </p>
+        </div>
     )
-
 };
 
 export default NotFoundPage;

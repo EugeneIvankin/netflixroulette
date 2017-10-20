@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Movie = ({item, getMovie}) => {
     return(
@@ -8,12 +8,17 @@ const Movie = ({item, getMovie}) => {
                 <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`} alt={item.movieName}/>
             </figure>
             <figcaption>
-                <h5 className="moviesName">{item.movieName}</h5>
-                <h5 className="moviesYear">{item.movieYear}</h5>
-                <h5 className="moviesLevel">{item.movieLevel}</h5>
+                <p className="moviesName">{item.movieName}</p>
+                <p className="moviesYear">{item.movieYear}</p>
+                <p className="moviesLevel">{item.movieLevel}</p>
             </figcaption>
         </div>
     )
+};
+
+Movie.propTypes = {
+    item: PropTypes.object.isRequired,
+    getMovie: PropTypes.func.isRequired
 };
 
 export default Movie;

@@ -5,6 +5,7 @@ import Movie from './Movie'
 
 
 export default class Main extends Component {
+
     getMovie = (movieId) => {
         this.props.history.push(`/film/${movieId}`);
         window.scrollTo(0,0);
