@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 
 export default function configureStore(initialState) {
     const logger = createLogger();
-    const store = createStore(rootReducer, initialState, applyMiddleware(logger, thunk));
+    const store = createStore(rootReducer, initialState, applyMiddleware(thunk, logger));
 
     if (module.hot) {
         module.hot.accept('../reducer', () => {

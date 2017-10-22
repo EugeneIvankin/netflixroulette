@@ -13,6 +13,7 @@ export function getMoviesByName(name) {
 
 export function getPopMovies() {
     return dispatch => {
+        console.log("популярные");
         getMovie(dispatch, urlGetPopMovies)
     }
 }

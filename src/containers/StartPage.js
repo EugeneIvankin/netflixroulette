@@ -17,7 +17,7 @@ class MoviesSearchPage extends Component {
 
         return <div>
             <Header history={history}/>
-            <Main foundedMovies={ foundedMovies } history={history}/>
+            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} sortMovies={sortMovies} history={history}/>
         </div>
     }
 }

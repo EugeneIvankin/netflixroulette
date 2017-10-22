@@ -8,13 +8,21 @@ import { bindActionCreators } from 'redux'
 
 class MoviesSearchPage extends Component {
 
+    getMoviesByUrl(url){
+        if (url === undefined){
+            this.props.searchAction.getPopMovies();
+        }
+        else {this.props.searchAction.getMoviesByName(url);}
+    }
+
+
     componentDidMount(){
-        this.props.searchAction.getMoviesByName(this.props.match.params.string);
+        this.getMoviesByUrl(this.props.match.params.string);
     }
 
     componentWillReceiveProps(nextProps){
         if(this.props.match.params.string!==nextProps.match.params.string){
-            this.props.searchAction.getMoviesByName(nextProps.match.params.string);
+            this.getMoviesByUrl(nextProps.match.params.string);
         }
     }
 
