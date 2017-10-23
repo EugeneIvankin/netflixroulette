@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/movieDetail.css';
+import './movieDetail.css';
 
 export default class MovieDetail extends Component {
 
@@ -24,12 +24,12 @@ export default class MovieDetail extends Component {
 
             <header className="headerMovieDetail">
                 <p className="logo">netflixroulette</p>
-                <button className="backwardBatton" onClick={() => {this.backToSearch(movie.movieName)}}><h2 className="backwardText">SEARCH</h2></button>
+                <button className="backwardBatton" onClick={() => {this.backToSearch(movie.movieName)}}>SEARCH</button>
             </header>
 
             <div className="foundMovie">
                 <figure className="movieFigure">
-                    <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`} className="movieImage"/>
+                    <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`}/>
                 </figure>
 
                 <div className="movieInfo">

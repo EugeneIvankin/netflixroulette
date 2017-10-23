@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Movie.css';
+
 
 const Movie = ({item, getMovie}) => {
     return(

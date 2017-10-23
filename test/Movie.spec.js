@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Movie from '../src/components/Movie'
+import Movie from '../src/components/Movie/Movie'
 
 describe('<Movie/>', () => {
     const movie = {

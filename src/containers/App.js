@@ -3,8 +3,7 @@ import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
 import MovieDetailPage from "./MovieDetailPage"
 import MoviesSearchPage from "./MoviesSearchPage"
-import Footer from "../components/Footer"
-
+import Footer from "../components/Footer/Footer"
 
 
 export default  class App extends Component {

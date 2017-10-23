@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import MovieDetail from "../components/MovieDetail";
+import MovieDetail from "../components/MovieDetail/MovieDetail";
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
 import * as movieDetailAction from "../actions/MovieDetailActions";
-import MoviesSearch from "../components/MoviesSearch"
+import MoviesSearch from "../components/FildMovies/FildMovies"
 
 
 class MovieDetailPage extends Component {
@@ -27,7 +27,10 @@ class MovieDetailPage extends Component {
 
         return <div>
             <MovieDetail movie={foundedMovie} history={history}/>
-            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} sortMovies={sortMovies} history={history}/>
+            <MoviesSearch foundedMovies={ foundedMovies }
+                          foundedMovie={foundedMovie}
+                          sortMovies={sortMovies}
+                          history={history}/>
         </div>
     }
 }

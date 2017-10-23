@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Header from '../src/components/Header'
+import Header from '../src/components/Header/Header'
+
 
 describe('<Header/>', () => {
-
-
 
     it ('should render Header', () => {
         const renderedComponent = shallow(
@@ -13,17 +12,17 @@ describe('<Header/>', () => {
        expect(renderedComponent).toMatchSnapshot();
     });
 
-    /*it ('test onSubmit', () => {
-        const onSubmit = jest.fn();
-        const value = 'submit';
-        const history = { push: jest.fn(value)};
-        const renderedCompanent = shallow(
-          <Header history={history}/>
-        );
-        renderedCompanent.find('form').simulate('submit');
-        expect(history).toBeCalledWith();
-    });
-*/
+    it ('should call handleChange on input changes', () => {
+        const history = {
+            push: jest.fn()
+        };
 
+        const renderedComponent = shallow(
+            <Header history={history}/>);
+
+        renderedComponent.find('input').simulate('change', { target: { value: 'Test' }});
+        renderedComponent.find('.searchDiv').simulate('submit', {preventDefault:jest.fn()});
+        expect(history.push).toBeCalledWith('/search/Test');
+    })
 
 });

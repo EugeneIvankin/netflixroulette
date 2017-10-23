@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import Header from "../components/Header";
-import MoviesSearch from "../components/MoviesSearch"
+import Header from "../components/Header/Header";
+import FildMovies from "../components/FildMovies/FildMovies"
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
+import Switch from "react-router-dom/es/Switch";
+import Route from "react-router-dom/es/Route";
+import MovieDetailPage from "./MovieDetailPage";
 
 
 class MoviesSearchPage extends Component {
@@ -33,8 +36,16 @@ class MoviesSearchPage extends Component {
         const {sortMovies} = this.props.searchAction;
 
         return <div>
+            {/*<Switch>
+                <Route exact path='/' component={Header}/>
+                <Route exact path='/search/:string' component={Header}/>
+                <Route exact path='/film/:string' component={MovieDetailPage}/>
+            </Switch>*/}
             <Header history={history}/>
-            <MoviesSearch foundedMovies={ foundedMovies } foundedMovie={foundedMovie} sortMovies={sortMovies} history={history}/>
+            <FildMovies foundedMovies={ foundedMovies }
+                        foundedMovie={foundedMovie}
+                        sortMovies={sortMovies}
+                        history={history}/>
         </div>
 
     }
