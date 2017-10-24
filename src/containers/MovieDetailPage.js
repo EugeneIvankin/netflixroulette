@@ -23,7 +23,7 @@ class MovieDetailPage extends Component {
         const { foundedMovies } = this.props.movies;
         const { foundedMovie } = this.props.movie;
         const { history} = this.props;
-        const {sortMovies} = this.props.searchAction;
+        const {sortMovies} = this.props.sortMovies;
 
         return <div>
             <MovieDetail movie={foundedMovie} history={history}/>
@@ -44,7 +44,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        searchAction: bindActionCreators(searchActions, dispatch),
+        sortMovies: bindActionCreators(searchActions.sortMovies, dispatch),
         getMovieInfo: bindActionCreators(movieDetailAction.getMovieInfo, dispatch)
     }
 }

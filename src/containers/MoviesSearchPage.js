@@ -36,11 +36,6 @@ class MoviesSearchPage extends Component {
         const {sortMovies} = this.props.searchAction;
 
         return <div>
-            {/*<Switch>
-                <Route exact path='/' component={Header}/>
-                <Route exact path='/search/:string' component={Header}/>
-                <Route exact path='/film/:string' component={MovieDetailPage}/>
-            </Switch>*/}
             <Header history={history}/>
             <FildMovies foundedMovies={ foundedMovies }
                         foundedMovie={foundedMovie}
