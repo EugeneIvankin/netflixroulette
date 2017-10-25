@@ -21,12 +21,10 @@ export default class MovieDetail extends Component {
         }
 
         return <main className="movieDetail">
-
             <header className="headerMovieDetail">
                 <p className="logo">netflixroulette</p>
-                <button className="backwardBatton" onClick={() => {this.backToSearch(movie.movieName)}}>SEARCH</button>
+                <button className="backwardBatton" onClick={() => {this.backToSearch()}}>SEARCH</button>
             </header>
-
             <div className="foundMovie">
                 <figure className="movieFigure">
                     <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`}/>

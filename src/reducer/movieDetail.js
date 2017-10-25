@@ -17,7 +17,6 @@ const newJson = (movie) => {
 };
 
 export default function MovieDetail(state = initialState, action) {
-
     switch (action.type) {
         case GET_MOVIE_SUCCESS:
             return {...state, foundedMovie:newJson(action.payload)};

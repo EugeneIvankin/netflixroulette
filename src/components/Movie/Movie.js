@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import './Movie.css';
 
 
+const ulrForPoster = 'https://image.tmdb.org/t/p/w640';
 const Movie = ({item, getMovie}) => {
     return(
         <div className="movie" onClick={() => {getMovie(item.movieId)}} title={item.movieName}>
             <figure>
-                <img src={`https://image.tmdb.org/t/p/w640${item.moviePoster}`} alt={item.movieName}/>
+                <img src={`${ulrForPoster}${item.moviePoster}`} alt={item.movieName}/>
             </figure>
             <figcaption>
                 <p className="moviesName">{item.movieName}</p>

@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import Header from "../components/Header/Header";
 import FildMovies from "../components/FildMovies/FildMovies"
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
 import { bindActionCreators } from 'redux'
-import Switch from "react-router-dom/es/Switch";
-import Route from "react-router-dom/es/Route";
-import MovieDetailPage from "./MovieDetailPage";
 
 
 class MoviesSearchPage extends Component {
@@ -17,7 +15,6 @@ class MoviesSearchPage extends Component {
         }
         else {this.props.searchAction.getMoviesByName(url);}
     }
-
 
     componentDidMount(){
         this.getMoviesByUrl(this.props.match.params.string);
@@ -60,3 +57,7 @@ class MoviesSearchPage extends Component {
     }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesSearchPage)
+
+MoviesSearchPage.propTypes = {
+    foudedMovies: PropTypes.array, foundedMovie: PropTypes.object, sortMovies: PropTypes.func
+};

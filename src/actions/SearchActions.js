@@ -2,19 +2,17 @@ import {GET_MOVIES_SUCCESS, GET_MOVIES_ERR, SORT_MOVIES} from '../constants/Sear
 
 
 const urlGetPopMovies = `https://api.themoviedb.org/3/movie/popular?api_key=32222e52f3ed54debf15b9c2ece6c852&language=en-US&page=1`;
-const urlGetMovieByName =(name)=> `https://api.themoviedb.org/3/search/movie?api_key=32222e52f3ed54debf15b9c2ece6c852&language=en-US&query=${name}&page=1&include_adult=false`;
-
+const urlGetMoviesByName =(name)=> `https://api.themoviedb.org/3/search/movie?api_key=32222e52f3ed54debf15b9c2ece6c852&language=en-US&query=${name}&page=1&include_adult=false`;
 
 export function getMoviesByName(name) {
     return dispatch => {
-        getMovie(dispatch, urlGetMovieByName(name))
+        getMovies(dispatch, urlGetMoviesByName(name))
     }
 }
 
 export function getPopMovies() {
     return dispatch => {
-        console.log("популярные");
-        getMovie(dispatch, urlGetPopMovies)
+        getMovies(dispatch, urlGetPopMovies)
     }
 }
 
@@ -25,20 +23,12 @@ export function sortMovies(typeOfSort) {
     }
 }
 
-function getMovie(dispath, url) {
+function getMovies(dispath, url) {
     fetch(url)
         .then(status)
         .then(json)
-        .then(function(data) {
-            dispath({
-                type: GET_MOVIES_SUCCESS,
-                payload: data.results
-            });
-        }).catch(function() {
-        dispath({
-            type: GET_MOVIES_ERR,
-        });
-    });
+        .then(json => dispath(getMoviesSuccess(json)))
+        .catch( ex => dispath(getMoviesErr()))
 }
 
 function status(response) {
@@ -53,8 +43,18 @@ function json(response) {
     return response.json()
 }
 
+function getMoviesSuccess(movies){
+    return{
+        type: GET_MOVIES_SUCCESS,
+        payload: movies.results
+    }
+}
 
-
+function getMoviesErr() {
+    return{
+        type: GET_MOVIES_ERR
+    }
+}
 
 
 

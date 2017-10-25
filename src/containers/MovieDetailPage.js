@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import MovieDetail from "../components/MovieDetail/MovieDetail";
 import { connect } from 'react-redux'
 import * as searchActions from '../actions/SearchActions'
@@ -50,3 +51,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetailPage)
+
+MovieDetailPage.propTypes = {
+    foudedMovies: PropTypes.array, foundedMovie: PropTypes.object, sortMovies: PropTypes.func
+};
