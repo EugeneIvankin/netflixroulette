@@ -12,7 +12,6 @@ describe('<Movie/>', () => {
     };
 
     it ('should render Movie', () => {
-
         const renderComponent = shallow(
           <Movie item={movie} getMovie={jest.fn()}/>
         );

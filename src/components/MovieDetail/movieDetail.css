@@ -1,4 +1,4 @@
-.movieDetail{
+.movie-detail {
     background-color: #414141;
     height: auto;
     display: flex;
@@ -10,7 +10,7 @@ h1, h2{
     font-family: Arial;
 }
 
-.headerMovieDetail{
+.header-movie-detail {
     display: flex;
     height: 6vh;
     width: 85vw;
@@ -19,7 +19,7 @@ h1, h2{
     align-items: center;
 }
 
-.backwardBatton{
+.backward-batton {
     height: 4vh;
     width: 10vw;
     display: inline;
@@ -29,7 +29,7 @@ h1, h2{
     cursor: pointer;
 }
 
-.movieFigure{
+.movie-figure {
     float: left;
     width: 30vw;
     height: 46vw;
@@ -38,14 +38,14 @@ h1, h2{
     margin-bottom: 7vh;
 }
 
-.movieInfo{
+.movie-info {
     width: 50vw;
     margin: 3vh 7vw 0 3vw;
     float: right;
     cursor: default;
 }
 
-.movieName{
+.movie-name {
     width: 70%;
     font-size: 3rem;
     color: #f55263;
@@ -53,7 +53,7 @@ h1, h2{
     margin-top: 0;
 }
 
-.movieMark{
+.movie-mark {
     border-style: solid;
     border-radius: 50%;
     width: auto;
@@ -69,23 +69,23 @@ h1, h2{
     right: 10vw;
 }
 
-.movieYear{
+.movie-year {
     display: block;
     margin-top: 6vh;
     color: white;
 
 }
 
-.movieDurability{
+.movie-durability {
     color: white;
 }
 
-.movieStory, .movieDirector, .movieCast{
+.movie-story, .movieDirector, .movieCast{
     font-weight: 100;
     color: #c8c8c8;
 }
 
-.movieStory{
+.movie-story {
     color: #d7d7d7;
     margin-bottom: 7vh;
 }

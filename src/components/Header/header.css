@@ -3,7 +3,7 @@ header{
     background-color: #414141;
 }
 
-.divLogo{
+.div-logo {
     display: flex;
     height: 6vh;
     width: 85vw;
@@ -48,7 +48,7 @@ input:focus{
     outline: none;
 }
 
-.searchDiv{
+.search-div {
     display: flex;
     align-items: center;
     height: 10vh;

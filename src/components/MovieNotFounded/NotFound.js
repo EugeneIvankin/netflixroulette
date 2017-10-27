@@ -3,8 +3,8 @@ import './notFound.css';
 
 const NotFoundPage = () => {
     return(
-        <div className="divNoFilmsFound">
-            <p className="textNoFilmsFound"> No films found </p>
+        <div className="div-no-films-found">
+            <p className="text-no-films-found"> No films found </p>
         </div>
     )
 };

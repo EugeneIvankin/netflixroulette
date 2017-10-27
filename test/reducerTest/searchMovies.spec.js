@@ -86,3 +86,6 @@ describe('GET_MOVIES_SUCCESS reducer', () => {
         })
     })
 })
+
+
+//вынести в отдельный файл массив

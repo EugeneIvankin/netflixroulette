@@ -42,3 +42,6 @@ describe('GET_MOVIE_SUCCESS reducer', () => {
         })
     })
 })
+
+
+// сделать снепшот джейсона

@@ -52,6 +52,9 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetailPage)
 
+
+//вынести страницу
+
 MovieDetailPage.propTypes = {
     foudedMovies: PropTypes.array, foundedMovie: PropTypes.object, sortMovies: PropTypes.func
 };

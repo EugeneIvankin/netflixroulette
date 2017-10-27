@@ -12,23 +12,23 @@ nav{
     background-color: #f5f5f5;
 }
 
-.moviesFoundText, .sortByText, #sortByDateText, #sortByRatingText{
+.movies-found-text, .sort-by-text, #sort-by-date-text, #sort-by-rating-text {
     font-family: Arial;
     cursor: default;
     margin: 0;
     color: #414141;
 }
 
-.moviesFoundText{
+.movies-found-text {
     margin-left: 7vw;
     margin-right: auto;
 }
 
-.sortByText, #sortByDateText, #sortByRatingText{
+.sort-by-text, #sort-by-date-text, #sort-by-rating-text {
     margin-right: 7vw;
 }
 
-#sortByDateText:hover, #sortByRatingText:hover{
+#sort-by-date-text:hover, #sort-by-rating-text:hover{
     cursor: pointer;
     color: #f55263;
 }

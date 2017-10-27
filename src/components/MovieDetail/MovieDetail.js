@@ -4,12 +4,7 @@ import './movieDetail.css';
 
 export default class MovieDetail extends Component {
 
-    constructor(props){
-        super(props);
-        this.backToSearch = this.backToSearch.bind(this);
-    }
-
-    backToSearch() {
+    backToSearch = () => {
         this.props.history.push(`/`);
     }
 
@@ -20,22 +15,22 @@ export default class MovieDetail extends Component {
             return null;
         }
 
-        return <main className="movieDetail">
-            <header className="headerMovieDetail">
+        return <main className="movie-detail">
+            <header className="header-movie-detail">
                 <p className="logo">netflixroulette</p>
-                <button className="backwardBatton" onClick={() => {this.backToSearch()}}>SEARCH</button>
+                <button className="backward-batton" onClick={this.backToSearch}>SEARCH</button>
             </header>
             <div className="foundMovie">
-                <figure className="movieFigure">
+                <figure className="movie-figure">
                     <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`}/>
                 </figure>
 
-                <div className="movieInfo">
-                    <h1 className="movieName">{movie.movieName}</h1>
-                    <h2 className="movieMark">{movie.movieLevel}</h2>
-                    <h2 className="movieYear">{movie.movieYear}</h2>
-                    <h2 className="movieDurability">{movie.movieDurability} min.</h2>
-                    <h2 className="movieStory">{movie.movieStory}</h2>
+                <div className="movie-info">
+                    <h1 className="movie-name">{movie.movieName}</h1>
+                    <h2 className="movie-mark">{movie.movieLevel}</h2>
+                    <h2 className="movie-year">{movie.movieYear}</h2>
+                    <h2 className="movie-durability">{movie.movieDurability} min.</h2>
+                    <h2 className="movie-story">{movie.movieStory}</h2>
                 </div>
             </div>
         </main>

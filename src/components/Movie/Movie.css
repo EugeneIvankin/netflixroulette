@@ -19,11 +19,11 @@ img{
     width: 100%;
     margin: 0 auto;
 }
-.moviesName, .moviesLevel{
+.movies-name, .movies-level {
     display: block;
 }
 
-.moviesName{
+.movies-name {
     width: 65%;
     font-size: 1vw;
     float: left;
@@ -35,14 +35,14 @@ img{
     text-overflow: ellipsis;
 }
 
-.moviesLevel{
+.movies-level {
     font-size: 1vw;
     width: 10%;
     margin: 0 4% 0 2%;
     color: #797979;
 }
 
-.moviesYear {
+.movies-year {
     width: 5vw;
     font-size: 0.9vw;
     margin: 0;
@@ -61,11 +61,11 @@ img{
         width: 638px;
     }
 
-    .moviesName, .moviesLevel{
+    .movies-name, .movies-level {
         font-size: 4vw;
     }
 
-    .moviesYear{
+    .movies-year {
         width: 17vw;
         font-size: 3.3vw;
     }
