@@ -1,4 +1,4 @@
-.movie{
+a{
     margin: 1%;
     display: flex;
     justify-content: center;
@@ -6,6 +6,7 @@
     width: 316px;
     height: auto;
     cursor: pointer;
+    text-decoration-line: none;
 }
 
 figure{
@@ -57,7 +58,7 @@ img{
 }
 
 @media screen and (max-width: 1024px) {
-    .movie{
+    a{
         width: 638px;
     }
 

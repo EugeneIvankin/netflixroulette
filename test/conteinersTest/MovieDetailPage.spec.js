@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MovieDetailPage from '../../src/containers/MovieDetailPage'
+import MovieDetailPage from '../../src/containers/MovieDetail'
 import configureStore from 'redux-mock-store';
 import MovieDetail from '../../src/components/MovieDetail/MovieDetail'
 

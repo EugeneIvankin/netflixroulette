@@ -1,34 +1,6 @@
-.main{
+.fild-movies {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 5vh;
-    background-color: #f5f5f5;
-}
-
-.movies-found-text, .sort-by-text, #sort-by-date-text, #sort-by-rating-text {
-    font-family: Arial;
-    cursor: default;
-    margin: 0;
-    color: #414141;
-}
-
-.movies-found-text {
-    margin-left: 7vw;
-    margin-right: auto;
-}
-
-.sort-by-text, #sort-by-date-text, #sort-by-rating-text {
-    margin-right: 7vw;
-}
-
-#sort-by-date-text:hover, #sort-by-rating-text:hover{
-    cursor: pointer;
-    color: #f55263;
-}

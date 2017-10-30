@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
-import MovieDetailPage from "./MovieDetailPage"
-import MoviesSearchPage from "./MoviesSearchPage"
+import MovieDetailPage from "./MovieDetail"
+import MoviesSearchPage from "./MoviesSearch"
 import Footer from "../components/Footer/Footer"
 
 

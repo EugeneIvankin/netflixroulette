@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import Header from "../components/Header/Header";
-import FildMovies from "../components/FildMovies/FildMovies"
-import { connect } from 'react-redux'
-import * as searchActions from '../actions/SearchActions'
-import { bindActionCreators } from 'redux'
+import Header from "../Header/Header";
+import SortBoard from "../SortBoard/SortBoard"
+import FildMovies from "../FildMovies/FildMovies"
 
 
-class MoviesSearchPage extends Component {
+export default class MoviesSearchPage extends Component {
 
     getMoviesByUrl(url){
         if (url === undefined){
@@ -34,29 +32,14 @@ class MoviesSearchPage extends Component {
 
         return <div>
             <Header history={history}/>
+            <SortBoard numberOfMovies={foundedMovies.length}
+                       sortMovies={sortMovies}/>
             <FildMovies foundedMovies={ foundedMovies }
-                        foundedMovie={foundedMovie}
-                        sortMovies={sortMovies}
-                        history={history}/>
+                        foundedMovie={foundedMovie}/>
         </div>
 
     }
 }
-
-    function mapStateToProps (state) {
-        return {
-            movies: state.searchMovies,
-            movie: state.movieDetail
-        }
-    }
-
-    function mapDispatchToProps(dispatch) {
-        return {
-            searchAction: bindActionCreators(searchActions, dispatch),
-        }
-    }
-
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesSearchPage)
 
 MoviesSearchPage.propTypes = {
     foudedMovies: PropTypes.array, foundedMovie: PropTypes.object, sortMovies: PropTypes.func

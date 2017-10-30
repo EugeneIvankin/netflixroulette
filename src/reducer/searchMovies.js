@@ -21,7 +21,6 @@ function sortMovies(movies, typeOfSort) {
         rating:'movieLevel',
     };
     const sortProp=propsBySortType[typeOfSort];
-
     newMovies.sort((a, b)=> b[sortProp] > a[sortProp] ? 1: -1);
     return newMovies;
 }

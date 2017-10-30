@@ -1,4 +1,4 @@
-import {GET_MOVIES_SUCCESS, GET_MOVIES_ERR, SORT_MOVIES} from '../constants/SearchMovies'
+import { GET_MOVIES_SUCCESS, GET_MOVIES_ERR, SORT_MOVIES } from '../constants/SearchMovies'
 
 
 const urlGetPopMovies = `https://api.themoviedb.org/3/movie/popular?api_key=32222e52f3ed54debf15b9c2ece6c852&language=en-US&page=1`;
