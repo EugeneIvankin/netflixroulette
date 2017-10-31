@@ -5,7 +5,13 @@
     "browser": true,
     "node": true
   },
+  "plugins": [
+    "react",
+    "jsx-a11y"
+  ],
   "rules": {
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    /*"jsx-a11y/anchor-is-valid": "off"*/
+    "jsx-a11y/anchor-is-valid": [ "error", {}]
   }
 }

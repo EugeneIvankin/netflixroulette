@@ -1,4 +1,4 @@
-footer{
+footer {
     display: flex;
     align-items: center;
     height: 7vh;
@@ -9,7 +9,7 @@ footer{
     margin-top: 5.5vh;
 }
 
-p{
+p {
     font-family: Arial;
     color: #f55263;
     font-size: 120%;
