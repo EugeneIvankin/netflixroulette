@@ -41,7 +41,7 @@ MovieDetailPage.propTypes = {
   getMovieInfo: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      string: PropTypes.func,
+      string: PropTypes.string,
     }).isRequired,
   }).isRequired,
   movies: PropTypes.shape({
@@ -49,11 +49,15 @@ MovieDetailPage.propTypes = {
   }).isRequired,
   movie: PropTypes.shape({
     foundedMovie: PropTypes.object,
-  }).isRequired,
-  sortMovies: PropTypes.shape({
-    sortMovies: PropTypes.func,
-  }).isRequired,
+  }),
+  sortMovies: PropTypes.func.isRequired,
   history: PropTypes.shape({
     history: PropTypes.object,
   }).isRequired,
+};
+
+MovieDetailPage.defaultProps = {
+  movie: {
+    foundedMovie: '',
+  },
 };

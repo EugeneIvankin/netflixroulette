@@ -22,12 +22,14 @@ const Movie = ({ item }) => (
 
 export default Movie;
 
+
 Movie.propTypes = {
   item: PropTypes.shape({
-    movieId: PropTypes.string,
+    movieId: PropTypes.number,
     movieName: PropTypes.string,
     moviePoster: PropTypes.string,
     movieYear: PropTypes.string,
-    movieLevel: PropTypes.string,
+    movieLevel: PropTypes.number,
   }).isRequired,
 };
+

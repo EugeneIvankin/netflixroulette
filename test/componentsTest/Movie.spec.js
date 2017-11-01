@@ -4,11 +4,11 @@ import Movie from '../../src/components/Movie/Movie'
 
 describe('<Movie/>', () => {
     const movie = {
-        movieId: '1',
+        movieId: 1,
         movieName: 'Taxi',
         moviePoster: 'url',
         movieYear: '2017',
-        movieLevel: '5.5'
+        movieLevel: 5.5
     };
 
     it ('should render Movie', () => {

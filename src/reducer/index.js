@@ -4,5 +4,5 @@ import movieDetail from './movieDetail';
 
 export default combineReducers({
   searchMovies,
-  movieDetail
+  movieDetail,
 });

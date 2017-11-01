@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FildMovies/> should render FindMovies with foundedMovies 1`] = `
+<main>
+  <div
+    className="fild-movies"
+  />
+</main>
+`;
+
+exports[`<FildMovies/> should render FindMovies without foundedMovies 1`] = `
+<main>
+  <div
+    className="fild-movies"
+  >
+    <NotFoundPage />
+  </div>
+</main>
+`;

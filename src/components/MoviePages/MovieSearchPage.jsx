@@ -18,9 +18,9 @@ export default class MoviesSearchPage extends Component {
 
   getMoviesByUrl(url) {
     if (url === undefined) {
-      this.props.searchAction.getPopMovies();
+      return this.props.searchAction.getPopMovies();
     }
-    this.props.searchAction.getMoviesByName(url);
+    return this.props.searchAction.getMoviesByName(url);
   }
 
   render() {
@@ -37,7 +37,7 @@ export default class MoviesSearchPage extends Component {
           sortMovies={sortMovies}
         />
         <FildMovies
-          foundedMovies={foundedMovie}
+          foundedMovies={foundedMovies}
           foundedMovie={foundedMovie}
         />
       </div>
@@ -51,12 +51,10 @@ MoviesSearchPage.propTypes = {
       string: PropTypes.string,
     }).isRequired,
   }).isRequired,
-  movies: PropTypes.shape({
-    foundedMovies: PropTypes.array,
-  }).isRequired,
+  movies: PropTypes.objectOf(PropTypes.array).isRequired,
   movie: PropTypes.shape({
     foundedMovie: PropTypes.object,
-  }).isRequired,
+  }),
   searchAction: PropTypes.shape({
     getPopMovies: PropTypes.func,
     getMoviesByName: PropTypes.func,
@@ -66,3 +64,10 @@ MoviesSearchPage.propTypes = {
     history: PropTypes.object,
   }).isRequired,
 };
+
+MoviesSearchPage.defaultProps = {
+  movie: {
+    foundedMovie: '',
+  },
+};
+

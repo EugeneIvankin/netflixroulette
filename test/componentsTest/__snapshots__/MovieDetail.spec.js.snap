@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieDetail/> should render MovieDetail 1`] = `
+<main
+  className="movie-detail"
+>
+  <header
+    className="header-movie-detail"
+  >
+    <p
+      className="logo"
+    >
+      netflixroulette
+    </p>
+    <button
+      className="backward-batton"
+      onClick={[Function]}
+    >
+      SEARCH
+    </button>
+  </header>
+  <div
+    className="foundMovie"
+  >
+    <figure
+      className="movie-figure"
+    >
+      <img
+        alt="Poster"
+        src="https://image.tmdb.org/t/p/w640url"
+      />
+    </figure>
+    <div
+      className="movie-info"
+    >
+      <h1
+        className="movie-name"
+      >
+        Taxi
+      </h1>
+      <h2
+        className="movie-mark"
+      >
+        5.5
+      </h2>
+      <h2
+        className="movie-year"
+      >
+        2017
+      </h2>
+      <h2
+        className="movie-durability"
+      >
+         min.
+      </h2>
+      <h2
+        className="movie-story"
+      />
+    </div>
+  </div>
+</main>
+`;

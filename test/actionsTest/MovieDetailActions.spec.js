@@ -8,11 +8,11 @@ import expect from 'expect'
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
 const payload = {
-    movieId: '1',
+    movieId: 1,
     movieName: 'Taxi',
     moviePoster: 'url',
     movieYear: '2017',
-    movieLevel: '5.5'
+    movieLevel: 5.5
 }
 
 describe('movie detail actions', () => {

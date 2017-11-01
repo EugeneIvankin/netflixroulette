@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Movie/> should render Movie 1`] = `
+<Link
+  replace={false}
+  to="/film/1"
+>
+  <div
+    className="movie"
+    title="Taxi"
+  >
+    <figure>
+      <img
+        alt="Taxi"
+        src="https://image.tmdb.org/t/p/w640url"
+      />
+    </figure>
+    <figcaption>
+      <p
+        className="movies-name"
+      >
+        Taxi
+      </p>
+      <p
+        className="movies-year"
+      >
+        2017
+      </p>
+      <p
+        className="movies-level"
+      >
+        5.5
+      </p>
+    </figcaption>
+  </div>
+</Link>
+`;

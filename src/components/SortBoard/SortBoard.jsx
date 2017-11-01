@@ -39,10 +39,22 @@ export default class SortBoard extends Component {
   render() {
     return (
       <nav>
-        <p className='movies-found-text'> {this.props.numberOfMovies} movies found </p>
-        <p className='sort-by-text'> Sort by </p>
-        <p className={this.state.styleSortByDate} onClick={this.sortByDate}> realease date</p>
-        <p className={this.state.styleSortByRating} onClick={this.sortByRating}> rating </p>
+        <p className="movies-found-text"> {this.props.numberOfMovies} movies found </p>
+        <p className="sort-by-text"> Sort by </p>
+        <button
+          className={this.state.styleSortByDate}
+          onClick={this.sortByDate}
+          onKeyPress={this.handleKeyPress}
+        >
+          realease date
+        </button>
+        <button
+          className={this.state.styleSortByRating}
+          onClick={this.sortByRating}
+          onKeyPress={this.handleKeyPress}
+        >
+          rating
+        </button>
       </nav>
     );
   }

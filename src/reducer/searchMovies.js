@@ -1,7 +1,7 @@
 import { GET_MOVIES_SUCCESS, GET_MOVIES_ERR, SORT_MOVIES } from '../constants/SearchMovies';
 
 const initialState = {
-  foundedMovies: []
+  foundedMovies: [],
 };
 
 function newJson(movies) {
@@ -10,7 +10,7 @@ function newJson(movies) {
     movieName: movie.title,
     movieYear: movie.release_date,
     movieLevel: movie.vote_average,
-    moviePoster: movie.poster_path
+    moviePoster: movie.poster_path,
   }));
 }
 
@@ -21,7 +21,7 @@ function sortMovies(movies, typeOfSort) {
     rating: 'movieLevel',
   };
   const sortProp = propsBySortType[typeOfSort];
-  newMovies.sort ((a, b) => b[sortProp] > a[sortProp]? 1: -1);
+  newMovies.sort((a, b) => (b[sortProp] > a[sortProp] ? 1 : -1));
   return newMovies;
 }
 

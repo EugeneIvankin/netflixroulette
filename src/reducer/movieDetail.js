@@ -1,20 +1,18 @@
 import { GET_MOVIE_SUCCESS, GET_MOVIE_ERR } from '../constants/MovieDetail';
 
 const initialState = {
-  foundedMovie: null
+  foundedMovie: null,
 };
 
-const newJson = (movie) => {
-  return {
-    movieId: movie.id,
-    movieName: movie.title,
-    moviePoster: movie.poster_path,
-    movieLevel: movie.vote_average,
-    movieYear: movie.release_date,
-    movieDurability: movie.runtime,
-    movieStory: movie.overview
-  };
-};
+const newJson = movie => ({
+  movieId: movie.id,
+  movieName: movie.title,
+  moviePoster: movie.poster_path,
+  movieLevel: movie.vote_average,
+  movieYear: movie.release_date,
+  movieDurability: movie.runtime,
+  movieStory: movie.overview,
+});
 
 export default function MovieDetail(state = initialState, action) {
   switch (action.type) {

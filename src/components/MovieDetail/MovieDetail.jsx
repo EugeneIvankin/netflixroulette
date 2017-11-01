@@ -41,12 +41,23 @@ MovieDetail.propTypes = {
   movie: PropTypes.shape({
     moviePoster: PropTypes.string,
     movieName: PropTypes.string,
-    movieLevel: PropTypes.string,
+    movieLevel: PropTypes.number,
     movieYear: PropTypes.string,
-    movieDurability: PropTypes.string,
+    movieDurability: PropTypes.number,
     movieStory: PropTypes.string,
-  }).isRequired,
+  }),
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+};
+
+MovieDetail.defaultProps = {
+  movie: {
+    moviePoster: '',
+    movieName: '',
+    movieLevel: 0,
+    movieYear: '',
+    movieDurability: 0,
+    movieStory: '',
+  },
 };

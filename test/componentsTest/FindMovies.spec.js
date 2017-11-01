@@ -5,14 +5,14 @@ import FildMovies from '../../src/components/FildMovies/FildMovies'
 describe('<FildMovies/>', () => {
 
     const foundedMovies = [
-        {movieId: '1', movieName: 'Taxi', moviePoster: 'url', movieYear: '2017', movieLevel: '5.5'}
+        {movieId: 1, movieName: 'Taxi', moviePoster: 'url', movieYear: '2017', movieLevel: 5.5}
     ];
     const foundedMovie = {
-        movieId: '1',
+        movieId: 1,
         movieName: 'Taxi',
         moviePoster: 'url',
         movieYear: '2017',
-        movieLevel: '5.5'
+        movieLevel: 5.5
     };
 
     it ('should render FindMovies with foundedMovies', () => {
