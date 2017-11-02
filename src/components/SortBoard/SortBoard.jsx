@@ -9,31 +9,25 @@ export default class SortBoard extends Component {
     this.state = {
       sortByDate: true,
       sortByRating: true,
-      styleSortByDate: 'off',
-      styleSortByRating: 'off',
     };
   }
 
   sortByDate = () => {
     const { sortMovies } = this.props;
-    if (this.state.sortByDate) {
-      this.state.sortByDate = false;
-      this.state.sortByRating = true;
-      this.state.styleSortByDate = 'on';
-      this.state.styleSortByRating = 'off';
-      sortMovies('date');
-    }
+    this.setState({
+      sortByDate:false,
+      sortByRating : true,
+    });
+    sortMovies('date');
   };
 
   sortByRating = () => {
     const { sortMovies } = this.props;
-    if (this.state.sortByRating) {
-      this.state.sortByRating = false;
-      this.state.sortByDate = true;
-      this.state.styleSortByDate = 'off';
-      this.state.styleSortByRating = 'on';
-      sortMovies('rating');
-    }
+    this.setState({
+      sortByDate:true,
+      sortByRating : false,
+    });
+     sortMovies('rating');
   };
 
   render() {
@@ -42,16 +36,16 @@ export default class SortBoard extends Component {
         <p className="movies-found-text"> {this.props.numberOfMovies} movies found </p>
         <p className="sort-by-text"> Sort by </p>
         <button
-          className={this.state.styleSortByDate}
+          className={`button-sort-by-date ${!this.state.sortByDate?'button-sort-by-date_active':''}`}
           onClick={this.sortByDate}
-          onKeyPress={this.handleKeyPress}
+          disable={!this.state.sortByDate}
         >
           realease date
         </button>
         <button
-          className={this.state.styleSortByRating}
+          className={`button-sort-by-rating ${!this.state.sortByRating?'button-sort-by-rating_active':''}`}
           onClick={this.sortByRating}
-          onKeyPress={this.handleKeyPress}
+          disable={!this.state.sortByRating}
         >
           rating
         </button>

@@ -8,12 +8,12 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint ./test/componentsTest --ext .js --ext .jsx"
+    "lint": "eslint ./src --ext .js --ext .jsx"
   },
   "jest": {
     "setupFiles": [
       "raf/polyfill",
-      "./test/jestsetup.js"
+      "./__tests__/jestsetup.js"
     ],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
@@ -22,7 +22,7 @@
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }
   },
-  "author": "",
+  "author": "Eugene",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",

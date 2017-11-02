@@ -33,7 +33,7 @@ export default class MoviesSearchPage extends Component {
       <div>
         <Header history={history} />
         <SortBoard
-          numberOfMovies={foundedMovies.length}
+          numberOfMovies={foundedMovies&&foundedMovies.length}
           sortMovies={sortMovies}
         />
         <FildMovies

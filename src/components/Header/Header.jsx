@@ -40,6 +40,7 @@ export default class Header extends Component {
   }
 }
 
+
 Header.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
