@@ -15,8 +15,8 @@ export default class SortBoard extends Component {
   sortByDate = () => {
     const { sortMovies } = this.props;
     this.setState({
-      sortByDate:false,
-      sortByRating : true,
+      sortByDate: false,
+      sortByRating: true,
     });
     sortMovies('date');
   };
@@ -24,10 +24,10 @@ export default class SortBoard extends Component {
   sortByRating = () => {
     const { sortMovies } = this.props;
     this.setState({
-      sortByDate:true,
-      sortByRating : false,
+      sortByDate: true,
+      sortByRating: false,
     });
-     sortMovies('rating');
+    sortMovies('rating');
   };
 
   render() {
@@ -36,14 +36,14 @@ export default class SortBoard extends Component {
         <p className="movies-found-text"> {this.props.numberOfMovies} movies found </p>
         <p className="sort-by-text"> Sort by </p>
         <button
-          className={`button-sort-by-date ${!this.state.sortByDate?'button-sort-by-date_active':''}`}
+          className={`button-sort-by-date ${!this.state.sortByDate ? 'button-sort-by-date_active' : ''}`}
           onClick={this.sortByDate}
           disable={!this.state.sortByDate}
         >
           realease date
         </button>
         <button
-          className={`button-sort-by-rating ${!this.state.sortByRating?'button-sort-by-rating_active':''}`}
+          className={`button-sort-by-rating ${!this.state.sortByRating ? 'button-sort-by-rating_active' : ''}`}
           onClick={this.sortByRating}
           disable={!this.state.sortByRating}
         >

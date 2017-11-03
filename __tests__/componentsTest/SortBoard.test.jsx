@@ -10,7 +10,7 @@ describe('<SortBoard/>', () => {
     props = {
       numberOfMovies: 20,
       sortMovies: jest.fn(),
-    }
+    };
   });
 
   it('should render SortBoard', () => {
