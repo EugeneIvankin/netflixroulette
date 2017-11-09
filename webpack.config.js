@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -16,8 +15,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin("[name].css")
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
@@ -34,10 +32,40 @@ module.exports = {
                     }
                 }
             },
-            { test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-                //use: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader"})
-            }
+            {
+                test: /\.css$/,
+                use: [
+                    require.resolve('style-loader'),
+                    {
+                        loader: require.resolve('css-loader'),
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                            localIdentName: "[name]__[local]___[hash:base64:5]"
+                        },
+                    },
+                    /*{
+                        loader: require.resolve('postcss-loader'),
+                        options: {
+                            // Necessary for external CSS imports to work
+                            // https://github.com/facebookincubator/create-react-app/issues/2677
+                            ident: 'postcss',
+                            plugins: () => [
+                                require('postcss-flexbugs-fixes'),
+                                autoprefixer({
+                                    browsers: [
+                                        '>1%',
+                                        'last 4 versions',
+                                        'Firefox ESR',
+                                        'not ie < 9', // React doesn't support IE8 anyway
+                                    ],
+                                    flexbox: 'no-2009',
+                                }),
+                            ],
+                        },
+                    },*/
+                ],
+            },
         ]
     }
 };

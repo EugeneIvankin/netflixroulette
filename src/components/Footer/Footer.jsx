@@ -1,9 +1,9 @@
 import React from 'react';
-import './footer.css';
+import style from './footer.css';
 
 const Footer = () => (
-  <footer>
-    <p>netflixroulette</p>
+  <footer className={style.footer}>
+    <p className={style.p}>netflixroulette</p>
   </footer>
 );
 

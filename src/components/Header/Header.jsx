@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './header.css';
+import style from './header.css';
 
 
 export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
+    console.log(style);
   }
 
   handleChange = (event) => {
@@ -21,19 +22,20 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <div className="div-logo">
-          <p className="logo">netflixroulette</p>
+        <div className={style.divLogo}>
+          <p className={style.logo}>netflixroulette</p>
         </div>
-        <h3>FIND YOUR MOVIE</h3>
-        <form className="search-div" onSubmit={this.handleSubmit}>
+        <h3 className={style.h3}>FIND YOUR MOVIE</h3>
+        <form className={style.searchDiv} onSubmit={this.handleSubmit}>
           <input
+            className={style.input}
             type="text"
             name="movie"
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="Enter your movie"
           />
-          <button type="submit">SEARCH</button>
+          <button className={style.button} type="submit">SEARCH</button>
         </form>
       </header>
     );

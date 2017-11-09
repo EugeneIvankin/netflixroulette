@@ -1,9 +1,9 @@
-header{
+header {
     height: 26vh;
     background-color: #414141;
 }
 
-.div-logo {
+.divLogo {
     display: flex;
     height: 6vh;
     width: 85vw;
@@ -12,7 +12,7 @@ header{
     align-items: center;
 }
 
-.logo{
+.logo {
     display: inline;
     font-family: Arial;
     color: #f55263;
@@ -21,14 +21,14 @@ header{
     cursor: default;
 }
 
-h3{
+h3 {
     font-family: Arial;
     color: white;
     margin-left: 7vw;
     cursor: default;
 }
 
-input{
+input {
     width: 55vw;
     height: 5vh;
     margin-left: 7vw;
@@ -44,17 +44,17 @@ input{
     padding-left: 3vw;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-.search-div {
+.searchDiv {
     display: flex;
     align-items: center;
     height: 10vh;
 }
 
-button{
+button {
     border-radius: 0.3vh;
     border: 0;
     width: 20vw;
@@ -68,6 +68,6 @@ button{
     color: white;
 }
 
-button:focus{
+button:focus {
     outline: none;
 }
