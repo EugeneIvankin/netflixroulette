@@ -1,9 +1,9 @@
 import React from 'react';
-import './notFound.css';
+import style from './notFound.css';
 
 const NotFoundPage = () => (
-  <div className="div-no-films-found">
-    <p className="text-no-films-found"> No films found </p>
+  <div className={style.divNoFilmsFound}>
+    <p className={style.textNoFilmsFound}> No films found </p>
   </div>
 );
 

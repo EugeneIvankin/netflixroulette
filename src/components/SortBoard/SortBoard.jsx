@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './SortBoard.css';
+import style from './SortBoard.css';
 
 
 export default class SortBoard extends Component {
@@ -32,18 +32,18 @@ export default class SortBoard extends Component {
 
   render() {
     return (
-      <nav>
-        <p className="movies-found-text"> {this.props.numberOfMovies} movies found </p>
-        <p className="sort-by-text"> Sort by </p>
+      <nav className={style.sortBoard}>
+        <p className={style.moviesFoundText}> {this.props.numberOfMovies} movies found </p>
+        <p className={style.sortByText}> Sort by </p>
         <button
-          className={`button-sort-by-date ${!this.state.sortByDate ? 'button-sort-by-date_active' : ''}`}
+          className={!this.state.sortByDate ? style.buttonSortActive : style.buttonSortBy}
           onClick={this.sortByDate}
           disable={!this.state.sortByDate}
         >
           realease date
         </button>
         <button
-          className={`button-sort-by-rating ${!this.state.sortByRating ? 'button-sort-by-rating_active' : ''}`}
+          className={!this.state.sortByRating ? style.buttonSortActive : style.buttonSortBy}
           onClick={this.sortByRating}
           disable={!this.state.sortByRating}
         >

@@ -54,7 +54,7 @@ input:focus {
     height: 10vh;
 }
 
-button {
+.searchButton {
     border-radius: 0.3vh;
     border: 0;
     width: 20vw;

@@ -1,4 +1,4 @@
-.movie-detail {
+.movieDetail {
     background-color: #414141;
     height: auto;
     display: flex;
@@ -10,7 +10,7 @@ h1, h2{
     font-family: Arial;
 }
 
-.header-movie-detail {
+.headerMovieDetail {
     display: flex;
     height: 6vh;
     width: 85vw;
@@ -19,7 +19,9 @@ h1, h2{
     align-items: center;
 }
 
-.backward-batton {
+.backwardBatton {
+    border-radius: 0.3vh;
+    border: 0;
     height: 4vh;
     width: 10vw;
     display: inline;
@@ -29,7 +31,7 @@ h1, h2{
     cursor: pointer;
 }
 
-.movie-figure {
+.movieFigure {
     float: left;
     width: 30vw;
     height: 46vw;
@@ -38,14 +40,18 @@ h1, h2{
     margin-bottom: 7vh;
 }
 
-.movie-info {
+.movieInfo {
+    display: flex;
+}
+
+.info {
     width: 50vw;
     margin: 3vh 7vw 0 3vw;
     float: right;
     cursor: default;
 }
 
-.movie-name {
+.name {
     width: 70%;
     font-size: 3rem;
     color: #f55263;
@@ -53,7 +59,7 @@ h1, h2{
     margin-top: 0;
 }
 
-.movie-mark {
+.mark {
     border-style: solid;
     border-radius: 50%;
     width: auto;
@@ -69,23 +75,23 @@ h1, h2{
     right: 10vw;
 }
 
-.movie-year {
+.year {
     display: block;
     margin-top: 6vh;
     color: white;
 
 }
 
-.movie-durability {
+.durability {
     color: white;
 }
 
-.movie-story, .movieDirector, .movieCast{
+.story, .movieDirector, .movieCast{
     font-weight: 100;
     color: #c8c8c8;
 }
 
-.movie-story {
+.story {
     color: #d7d7d7;
     margin-bottom: 7vh;
 }

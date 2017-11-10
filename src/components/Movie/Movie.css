@@ -1,4 +1,4 @@
-a{
+.movieBaner{
     margin: 1%;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@ a{
     text-decoration-line: none;
 }
 
-figure{
+.poster{
     background-color: whitesmoke;
     width: 100%;
     height: 94%;
@@ -20,11 +20,11 @@ img{
     width: 100%;
     margin: 0 auto;
 }
-.movies-name, .movies-level {
+.name, .level {
     display: block;
 }
 
-.movies-name {
+.name {
     width: 65%;
     font-size: 1vw;
     float: left;
@@ -36,14 +36,14 @@ img{
     text-overflow: ellipsis;
 }
 
-.movies-level {
+.level {
     font-size: 1vw;
     width: 10%;
     margin: 0 4% 0 2%;
     color: #797979;
 }
 
-.movies-year {
+.year {
     width: 5vw;
     font-size: 0.9vw;
     margin: 0;
@@ -58,15 +58,15 @@ img{
 }
 
 @media screen and (max-width: 1024px) {
-    a{
+    .movieBaner{
         width: 638px;
     }
 
-    .movies-name, .movies-level {
+    .name, .level {
         font-size: 4vw;
     }
 
-    .movies-year {
+    .year {
         width: 17vw;
         font-size: 3.3vw;
     }

@@ -7,7 +7,6 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
-    console.log(style);
   }
 
   handleChange = (event) => {
@@ -21,7 +20,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className={style.header}>
         <div className={style.divLogo}>
           <p className={style.logo}>netflixroulette</p>
         </div>
@@ -35,7 +34,7 @@ export default class Header extends Component {
             onChange={this.handleChange}
             placeholder="Enter your movie"
           />
-          <button className={style.button} type="submit">SEARCH</button>
+          <button className={style.searchButton} type="submit">SEARCH</button>
         </form>
       </header>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './movieDetail.css';
+import style from './movieDetail.css';
 
 export default class MovieDetail extends Component {
   backToSearch = () => {
@@ -15,21 +15,21 @@ export default class MovieDetail extends Component {
     }
 
     return (
-      <main className="movie-detail">
-        <header className="header-movie-detail">
-          <p className="logo">netflixroulette</p>
-          <button className="backward-batton" onClick={this.backToSearch}>SEARCH</button>
+      <main className={style.movieDetail}>
+        <header className={style.headerMovieDetail}>
+          <p className={style.logo}>netflixroulette</p>
+          <button className={style.backwardBatton} onClick={this.backToSearch}>SEARCH</button>
         </header>
-        <div className="foundMovie">
-          <figure className="movie-figure">
-            <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`} alt="Poster" />
+        <div className={style.movieInfo}>
+          <figure className={style.movieFigure}>
+            <img src={`https://image.tmdb.org/t/p/w640${movie.moviePoster}`} />
           </figure>
-          <div className="movie-info">
-            <h1 className="movie-name">{movie.movieName}</h1>
-            <h2 className="movie-mark">{movie.movieLevel}</h2>
-            <h2 className="movie-year">{movie.movieYear}</h2>
-            <h2 className="movie-durability">{movie.movieDurability} min.</h2>
-            <h2 className="movie-story">{movie.movieStory}</h2>
+          <div className={style.info}>
+            <h1 className={style.name}>{movie.movieName}</h1>
+            <h2 className={style.mark}>{movie.movieLevel}</h2>
+            <h2 className={style.year}>{movie.movieYear}</h2>
+            <h2 className={style.durability}>{movie.movieDurability} min.</h2>
+            <h2 className={style.story}>{movie.movieStory}</h2>
           </div>
         </div>
       </main>

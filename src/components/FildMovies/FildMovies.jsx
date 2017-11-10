@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
 import NotFoundMovies from '../MovieNotFounded/NotFound';
-import './FildMovies.css';
+import style from './FildMovies.css';
 
 
 export default class MoviesSearch extends Component {
@@ -19,7 +19,7 @@ export default class MoviesSearch extends Component {
   render() {
     return (
       <main>
-        <div className="fild-movies">
+        <div className={style.fildMovies}>
           {this.renderList()}
         </div>
       </main>
